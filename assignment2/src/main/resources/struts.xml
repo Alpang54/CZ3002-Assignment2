@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts PUBLIC
-    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
-    "http://struts.apache.org/dtds/struts-2.5.dtd">
-
+		"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+		"http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
-
     <constant name="struts.devMode" value="true" />
 
     <package name="basicstruts2" extends="struts-default">
         <action name="index">
             <result>/index.jsp</result>
         </action>
+        
+        <action name="selectedLogin" class="cz3002.assignment2.helloworld.action.LoginRegisterAction" method="selectedLogin">
+        	<result name="success">/Login.jsp</result>
+         </action>
+        <action name="selectedRegister" class="cz3002.assignment2.helloworld.action.LoginRegisterAction" method="selectedRegister">
+        	<result name="success">/Register.jsp</result>
+        </action>
+        
+        <action name="register" class="cz3002.assignment2.helloworld.action.LoginRegisterAction" method="register">
+            <result name="success">/RegisterSuccess.jsp</result>
+            <result name="error">/RegisterFailure.jsp</result>
+        </action>
+        
+        <action name="login" class="cz3002.assignment2.helloworld.action.LoginRegisterAction" method="login">
+            <result name="success">/LoginSuccess.jsp</result>
+            <result name="error">/LoginFailure.jsp</result>
+        </action>
+        
     </package>
-
 </struts>

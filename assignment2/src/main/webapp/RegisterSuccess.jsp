@@ -8,18 +8,8 @@
   </head>
 
   <body>
-    <h1>Welcome To Struts 2!</h1>
-    <p>
-      <a href="<s:url action='hello'/>">Hello World</a>
-    </p>
-    
-    <p>
-      <a href="<s:url action='selectedLogin'/>">Login</a>
-    </p>
-    
-    <p>
-      <a href="<s:url action='selectedRegister'/>">Register</a>
-    </p>
-    
+  	<h1>RegisterSuccess Page</h1>
+    <p><s:property value="%{Person}"/></p>
+    <p><a href="<s:url action='index'/>">Home Page</a></p>
   </body>
 </html>

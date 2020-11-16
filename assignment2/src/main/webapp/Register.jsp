@@ -7,19 +7,15 @@
     <title>Basic Struts 2 Application - Welcome</title>
   </head>
 
+
   <body>
-    <h1>Welcome To Struts 2!</h1>
-    <p>
-      <a href="<s:url action='hello'/>">Hello World</a>
-    </p>
-    
-    <p>
-      <a href="<s:url action='selectedLogin'/>">Login</a>
-    </p>
-    
-    <p>
-      <a href="<s:url action='selectedRegister'/>">Register</a>
-    </p>
-    
+    <h1>Register Page</h1>
+    <p>Register form</p>
+    <s:form action="register">
+      <s:textfield name="person.userName" label="%{'Your name'}"/>
+      <s:textfield name="person.password" label="%{'Your password'}"/>
+      <s:submit value="%{'Submit'}"/>
+    </s:form>
   </body>
+
 </html>

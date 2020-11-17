@@ -5,11 +5,11 @@
   <link href="./style.css" rel="stylesheet" type="text/css">
   <head>
     <meta charset="UTF-8">
-    <title>Basic Struts 2 Application - Welcome</title>
+    <title>Basic Struts 2 Application - Login Failed</title>
   </head>
 
   <body>
-  	<h1>LoginFailure Page</h1>
+  	<h1>Failed to login!</h1>
     <p><s:property value="%{Person}"/></p>
     <p><a href="<s:url action='index'/>" class="primaryButton">Return to homepage</a></p>
   </body>

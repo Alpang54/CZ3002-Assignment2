@@ -84,7 +84,7 @@ public class LoginRegisterAction extends ActionSupport {
         	return ERROR;
         }*/
         
-    	String messageToDisplay=this.getUserName()+"successfully registered!";
+    	String messageToDisplay=this.getUserName()+" successfully registered!";
     	this.setMessageToDisplay(messageToDisplay);
         return SUCCESS;
     }

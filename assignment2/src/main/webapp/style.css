@@ -35,10 +35,33 @@ input:focus {
   border: 2px solid #3D8C40;
 }
 
-.primaryButton {
+.formSubmitButton {
 	width:100%;
   	margin: 5px auto auto auto;
-  	padding: 8px 15px 8px 15px;
+  	padding: 8px 0px 8px 0px;
+	display:block;
+	
+	background-color: #4CAF50;
+	color: white;
+  	border: none;
+  	border-radius: 4px;
+  	
+  	font-family: "Verdana";
+  	font-weight: bold;
+	text-decoration: none;
+	
+  	transition-duration: 0.4s;  	
+	
+}
+.formSubmitButton:hover {
+	background-color: #3D8C40;
+	color: white;
+}
+
+.primaryButton {
+	/*width:100%;*/
+  	margin: 5px 3px 0px 3px;
+  	padding: 8px 0px 8px 0px;
 	display:block;
 	
 	background-color: #4CAF50;
@@ -59,9 +82,9 @@ input:focus {
 }
 
 .secondaryButton {
-	width:100%;
-  	margin: 5px auto auto auto;
-  	padding: 8px 15px 8px 15px;
+	/*width:100%;*/
+  	margin: 5px 3px 0px 3px;
+  	padding: 8px 0px 8px 0px;
 	display:block;
 	
 	background-color: #e7e7e7; 

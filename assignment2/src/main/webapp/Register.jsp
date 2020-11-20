@@ -12,12 +12,12 @@
   <body>
     <h1>Register</h1>
     <s:form action="register">
-      <s:textfield type="text" name="person.userName" label="%{'Username'}" placeholder="%{'Enter name'}"/>
-      <s:textfield type="password" name="person.password" label="%{'Password'}" placeholder="%{'Enter password'}"/>
-      <s:textfield type="password" name="person.passwordConfirm" label="%{'Confirm Password'}" placeholder="%{'Enter password again'}"/>
-      <s:submit class="primaryButton" value="%{'Submit'}"/>
-      <s:submit class="secondaryButton" value="%{'Cancel'}"/>
+      <s:textfield type="text" name="userName" label="%{'Username'}" placeholder="%{'Enter name'}"/>
+      <s:textfield type="password" name="password" label="%{'Password'}" placeholder="%{'Enter password'}"/>
+      <s:textfield type="password" name="passwordConfirm" label="%{'Confirm Password'}" placeholder="%{'Enter password again'}"/>
+      <s:submit class="formSubmitButton" value="%{'Submit'}"/>
     </s:form>
+    <p><a href="<s:url action='index'/>" class="secondaryButton">Cancel</a></p>
   </body>
 
 </html>

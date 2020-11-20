@@ -1,4 +1,4 @@
-package cz3002.assignment2.helloworld.model;
+package cz3002.assignment2.Authentication.model;
 public class Person {
     
     private String userName;

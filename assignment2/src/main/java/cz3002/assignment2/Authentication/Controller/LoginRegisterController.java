@@ -5,6 +5,7 @@ import java.sql.Statement;
 import java.sql.DriverManager;
 
 class database_connection {
+	
     public Connection databaseLink;
 
     public Connection getConnection(){
@@ -37,7 +38,7 @@ public class LoginRegisterController {
         return this.mysqlConnector;
     }
 
-    public String registerAccount(String new_username, String new_password){
+    public boolean registerAccount(String new_username, String new_password){
         /* Now check for Database here
          *
          *
@@ -61,16 +62,17 @@ public class LoginRegisterController {
             statement.executeUpdate(registerAccount);
 
             System.out.println("Successful creation of account");
+            return true;
 
         }catch(Exception e){
             e.printStackTrace();
             e.getCause();
+            return false;
         }
 
-        return "SUCCESS";
     }
 
-    public String validateLogin(String username_input, String password_input){
+    public boolean validateLogin(String username_input, String password_input){
         /* Check for database here*
          * if (personexist){return SUCCESS}
          * else{return ERROR}
@@ -95,6 +97,7 @@ public class LoginRegisterController {
             while(queryResult.next()){
                 if (queryResult.getInt(1) == 1){
                     System.out.print("Successful Login");
+                    return true;
                 }else{
                     System.out.print("Failed Login");
                 }
@@ -103,9 +106,10 @@ public class LoginRegisterController {
         }catch(Exception e){
             e.printStackTrace();
             e.getCause();
+            return false;
         }
 
-        return "SUCCESS";
+        return false;
     }
 }
 

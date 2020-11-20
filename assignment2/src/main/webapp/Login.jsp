@@ -15,8 +15,8 @@
       <s:textfield type="text" name="person.userName" label="%{'Username'}" placeholder="%{'Enter name'}"/>
       <s:textfield type="password" name="person.password" label="%{'Password'}" placeholder="%{'Enter password'}"/>
       <s:submit class="primaryButton" value="%{'Submit'}"/>
-      <s:submit class="secondaryButton" value="%{'Cancel'}"/>
     </s:form>
+    <p><a href="<s:url action='index'/>" class="primaryButton">Cancel</a></p>
   </body>
 
 </html>

@@ -10,19 +10,19 @@
             <result>/index.jsp</result>
         </action>
         
-        <action name="selectedLogin" class="cz3002.assignment2.helloworld.action.LoginRegisterAction" method="selectedLogin">
+        <action name="selectedLogin" class="cz3002.assignment2.Authentication.action.LoginRegisterAction" method="selectedLogin">
         	<result name="success">/Login.jsp</result>
          </action>
-        <action name="selectedRegister" class="cz3002.assignment2.helloworld.action.LoginRegisterAction" method="selectedRegister">
+        <action name="selectedRegister" class="cz3002.assignment2.Authentication.action.LoginRegisterAction" method="selectedRegister">
         	<result name="success">/Register.jsp</result>
         </action>
         
-        <action name="register" class="cz3002.assignment2.helloworld.action.LoginRegisterAction" method="register">
+        <action name="register" class="cz3002.assignment2.Authentication.action.LoginRegisterAction" method="register">
             <result name="success">/RegisterSuccess.jsp</result>
             <result name="error">/RegisterFailure.jsp</result>
         </action>
         
-        <action name="login" class="cz3002.assignment2.helloworld.action.LoginRegisterAction" method="login">
+        <action name="login" class="cz3002.assignment2.Authentication.action.LoginRegisterAction" method="login">
             <result name="success">/LoginSuccess.jsp</result>
             <result name="error">/LoginFailure.jsp</result>
         </action>

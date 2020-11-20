@@ -18,5 +18,5 @@
     </s:form>
     <p><a href="<s:url action='index'/>" class="secondaryButton">Cancel</a></p>
   </body>
-
+  
 </html>

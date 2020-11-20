@@ -10,7 +10,7 @@
 
   <body>
   	<h1>Successfully logged in!</h1>
-    <p><s:property value="%{Person}"/></p>
+    <p><s:property value="%{messageToDisplay}"/></p>
     <p><a href="<s:url action='index'/>" class="primaryButton">Return to homepage</a></p>
   </body>
 </html>

@@ -10,8 +10,8 @@ MySQL statements to execute to create the database:
 CREATE DATABASE login;
 
 CREATE TABLE `accounts` (<br/>
-  `username` varchar(45) NOT NULL,<br/>
-  `password` varchar(45) NOT NULL,<br/>
-  PRIMARY KEY (`username`,`password`)<br/>
+<t/>`username` varchar(45) NOT NULL,<br/>
+<t/>`password` varchar(45) NOT NULL,<br/>
+<t/>PRIMARY KEY (`username`,`password`)<br/>
 );
 

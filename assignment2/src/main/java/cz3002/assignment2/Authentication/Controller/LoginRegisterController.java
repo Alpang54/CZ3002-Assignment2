@@ -4,11 +4,11 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.DriverManager;
 
-class database_connection {
-	
-    public Connection databaseLink;
+public class LoginRegisterController {
 
     public Connection getConnection(){
+        Connection databaseLink = null;
+
         String databaseName = "login";
         String databaseUser = "root";
         String databasePassword = "password123";
@@ -24,18 +24,7 @@ class database_connection {
             e.printStackTrace();
             e.getCause();
         }
-
         return databaseLink;
-    }
-}
-
-
-
-public class LoginRegisterController {
-    private database_connection mysqlConnector;
-
-    public database_connection getConnection(){
-        return this.mysqlConnector;
     }
 
     public boolean registerAccount(String new_username, String new_password){
@@ -44,13 +33,13 @@ public class LoginRegisterController {
          *
          * if (personexist){return ERROR}
          * else{return SUCCESS} */
+        boolean status = false;
 
         // Test data:
         String test_newusername = new_username;
         String test_newpassword = new_password;
 
-        this.mysqlConnector = new database_connection();
-        Connection connectDB = mysqlConnector.getConnection();
+        Connection connectDB = getConnection();
 
         // This is the statement to be sent to the DB
         // Need logic to confirm that newpassword and newconfirmpassword are the same
@@ -62,14 +51,16 @@ public class LoginRegisterController {
             statement.executeUpdate(registerAccount);
 
             System.out.println("Successful creation of account");
-            return true;
+
+            status = true;
+
+            return status;
 
         }catch(Exception e){
             e.printStackTrace();
             e.getCause();
-            return false;
+            return status;
         }
-
     }
 
     public boolean validateLogin(String username_input, String password_input){
@@ -77,13 +68,13 @@ public class LoginRegisterController {
          * if (personexist){return SUCCESS}
          * else{return ERROR}
          */
+        boolean status = false;
 
         // Test data:
         String test_username = username_input;
         String test_password = password_input;
 
-        this.mysqlConnector = new database_connection();
-        Connection connectDB = mysqlConnector.getConnection();
+        Connection connectDB = getConnection();
 
         // This is the statement to be sent to the DB
         String verifyLogin = "SELECT count(1) FROM accounts WHERE username = '" + test_username + "' AND password = '" + test_password + "';";
@@ -97,7 +88,8 @@ public class LoginRegisterController {
             while(queryResult.next()){
                 if (queryResult.getInt(1) == 1){
                     System.out.print("Successful Login");
-                    return true;
+                    status = true;
+                    return status;
                 }else{
                     System.out.print("Failed Login");
                 }
@@ -106,12 +98,21 @@ public class LoginRegisterController {
         }catch(Exception e){
             e.printStackTrace();
             e.getCause();
-            return false;
+            return status;
         }
-
-        return false;
+        return status;
     }
 }
+
+/* SQL Statement to create table
+CREATE DATABASE login;
+
+CREATE TABLE `accounts` (
+  `username` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  PRIMARY KEY (`username`,`password`)
+)
+ */
 
 
 // Test out database connection

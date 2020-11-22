@@ -9,7 +9,9 @@
         <action name="index">
             <result>/index.jsp</result>
         </action>
-        
+        <action name="">
+            <result>/index.jsp</result>
+        </action>
         <action name="selectedLogin" class="cz3002.assignment2.Authentication.action.LoginRegisterAction" method="selectedLogin">
         	<result name="success">/Login.jsp</result>
          </action>

@@ -1,6 +1,6 @@
 package cz3002.assignment2.Authentication.action;
 import cz3002.assignment2.Authentication.model.Person;
-import Controller.LoginRegisterController;
+import cz3002.assignment2.Authentication.model.DatabaseService;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -62,7 +62,7 @@ public class LoginRegisterAction extends ActionSupport {
     }
     public String register(){
     	
-    	LoginRegisterController controller=new LoginRegisterController();
+    	DatabaseService databaseService=new DatabaseService();
     	
     	if( !this.getPassword().equals(this.getPasswordConfirm())) {
         	String messageToDisplay="Passwords do not match!";
@@ -76,7 +76,7 @@ public class LoginRegisterAction extends ActionSupport {
         	return ERROR;
         }
         
-        boolean result=controller.registerAccount(this.getUserName(),this.getPassword());
+        boolean result=databaseService.registerAccount(this.getUserName(),this.getPassword());
         if (!result) {
         	String messageToDisplay="Username may be in use or connection to database cannot be established!";
         	this.setMessageToDisplay(messageToDisplay);
@@ -90,7 +90,7 @@ public class LoginRegisterAction extends ActionSupport {
     
     public String login(){
     	
-    	LoginRegisterController controller=new LoginRegisterController();
+    	DatabaseService databaseService=new DatabaseService();
 
         if (this.person.getUserName().length() == 0 || this.person.getPassword().length()==0) {
         	String messageToDisplay="Invalid username or password!";
@@ -98,7 +98,7 @@ public class LoginRegisterAction extends ActionSupport {
         	return ERROR;
         }
         
-        boolean result=controller.validateLogin(this.person.getUserName(),this.person.getPassword());
+        boolean result=databaseService.validateLogin(this.person.getUserName(),this.person.getPassword());
         if (!result) {
         	String messageToDisplay="Invalid username or password or connection to database could not be established!";
         	this.setMessageToDisplay(messageToDisplay);

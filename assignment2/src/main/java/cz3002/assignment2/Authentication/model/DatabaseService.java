@@ -1,10 +1,10 @@
-package Controller;
+package cz3002.assignment2.Authentication.model;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.DriverManager;
 
-public class LoginRegisterController {
+public class DatabaseService {
 
     public Connection getConnection(){
         Connection databaseLink = null;

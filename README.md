@@ -28,7 +28,7 @@ You will need to put in your root password in order to access the database.
 You will also need to change the code in the Database model inside the LoginRegisterController class. 
 
 You will need to change the code line:</br>
-      String databasePassword = "password123";</br>
+      String databasePassword = "root";</br>
 To reflect your own root password.
 
 

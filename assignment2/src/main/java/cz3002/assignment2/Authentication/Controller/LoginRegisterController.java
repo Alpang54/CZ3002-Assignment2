@@ -36,14 +36,14 @@ public class LoginRegisterController {
         boolean status = false;
 
         // Test data:
-        String test_newusername = new_username;
-        String test_newpassword = new_password;
+        String newusername = new_username;
+        String newpassword = new_password;
 
         Connection connectDB = getConnection();
 
         // This is the statement to be sent to the DB
         // Need logic to confirm that newpassword and newconfirmpassword are the same
-        String registerAccount = "INSERT INTO accounts VALUES (" + test_newusername + "," + test_newpassword + ");";
+        String registerAccount = "INSERT INTO accounts (username, password) VALUES ('" + newusername + "', '" + newpassword + "');";
 
         try{
             // This sends the statement to the MySQL DB
@@ -71,13 +71,13 @@ public class LoginRegisterController {
         boolean status = false;
 
         // Test data:
-        String test_username = username_input;
-        String test_password = password_input;
+        String username = username_input;
+        String password = password_input;
 
         Connection connectDB = getConnection();
 
         // This is the statement to be sent to the DB
-        String verifyLogin = "SELECT count(1) FROM accounts WHERE username = '" + test_username + "' AND password = '" + test_password + "';";
+        String verifyLogin = "SELECT count(1) FROM accounts WHERE username = '" + username + "' AND password = '" + password + "';";
 
         try{
             // This sends the statement to the MySQL DB
@@ -116,10 +116,9 @@ CREATE TABLE `accounts` (
 
 
 // Test out database connection
-/*
-public class Mysql_Connector{
+/*class Mysql_Connector {
     public static void main(String[] args) {
-        database_connection connectionTest = new database_connection();
-        connectionTest.getConnection();
+        LoginRegisterController connectionTest = new LoginRegisterController();
+        connectionTest.registerAccount("Testing2", "Testing123");
     }
 }*/

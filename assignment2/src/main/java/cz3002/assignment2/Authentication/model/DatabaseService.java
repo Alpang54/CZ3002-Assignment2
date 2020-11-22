@@ -12,7 +12,7 @@ public class DatabaseService {
         String databaseName = "login";
         String databaseUser = "root";
         String databasePassword = "root";
-        String url = "jdbc:mysql://localhost/" + databaseName;
+        String url = "jdbc:mysql://localhost/" + databaseName+" ?useTimezone=true&serverTimezone=UTC";
 
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -116,7 +116,8 @@ CREATE TABLE `accounts` (
 
 
 // Test out database connection
-/*class Mysql_Connector {
+/*
+class Mysql_Connector {
     public static void main(String[] args) {
         LoginRegisterController connectionTest = new LoginRegisterController();
         connectionTest.registerAccount("Testing2", "Testing123");

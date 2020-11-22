@@ -11,7 +11,7 @@ public class LoginRegisterController {
 
         String databaseName = "login";
         String databaseUser = "root";
-        String databasePassword = "password123";
+        String databasePassword = "root";
         String url = "jdbc:mysql://localhost/" + databaseName;
 
         try{
